@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -1464,7 +1465,6 @@ function highlightSyntax(line: string): ReactNode {
   // Built-ins and classes
   const builtins = ['pd', 'np', 'df', 'StandardScaler', 'KMeans', 'LinearRegression', 'IsolationForest', 'RandomForestRegressor', 'KFold'];
   
-  let result = line;
   
   // Check for comments
   if (line.trim().startsWith('#')) {
@@ -1474,7 +1474,7 @@ function highlightSyntax(line: string): ReactNode {
   // Check for strings
   if (line.includes("'") || line.includes('"')) {
     const parts: ReactNode[] = [];
-    let remaining = line;
+    const remaining = line;
     let key = 0;
     
     const stringRegex = /(['"])(.*?)\1/g;
